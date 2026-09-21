@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class test01(Document):
-	_DOCTYPE_NAME = "test-01"
+class Domain_(Document):
+	pass

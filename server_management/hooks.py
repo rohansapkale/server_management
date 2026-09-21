@@ -2,7 +2,7 @@ app_name = "server_management"
 app_title = "Server Management"
 app_publisher = "Rohan Sapkale"
 app_description = "Server and Website Management Platform"
-app_email = "rohansapkale2003@gmail.com"
+app_email = "sapkalerohan07@gmail.com"
 app_license = "mit"
 
 # Apps
@@ -14,10 +14,9 @@ app_license = "mit"
 # add_to_apps_screen = [
 # 	{
 # 		"name": "server_management",
-# 		"logo": "/assets/server_management/logo.png",
+# 		"logo": "/assets/frappe/images/frappe-framework-logo.svg",
 # 		"title": "Server Management",
-# 		"route": "/server_management",
-# 		"has_permission": "server_management.api.permission.has_app_permission"
+# 		"route": "/app/server-management"
 # 	}
 # ]
 
