@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-09-21 17:02:23.634552",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "server_name",
+  "hostname",
+  "ip_address",
+  "provider",
+  "server_type",
+  "operating_system",
+  "os_version",
+  "region",
+  "cpu_cores",
+  "ram_gb",
+  "disk_capacity_gb",
+  "ssh_port",
+  "status",
+  "enviorment",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "server_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Server Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "hostname",
+   "fieldtype": "Data",
+   "label": "Hostname",
+   "unique": 1
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address"
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Select",
+   "label": "Provider",
+   "options": "AWS\nDigitalOcean\nHetzner\nGCP\nAzure\nLocal"
+  },
+  {
+   "fieldname": "server_type",
+   "fieldtype": "Select",
+   "label": "Server Type",
+   "options": "VPS\nDedicated\nCloud\nLocal"
+  },
+  {
+   "fieldname": "operating_system",
+   "fieldtype": "Select",
+   "label": "Operating system",
+   "options": "Ubuntu\nDebian\nCentOS\nAlmaLinux\nWindows"
+  },
+  {
+   "fieldname": "os_version",
+   "fieldtype": "Data",
+   "label": "OS Version"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region"
+  },
+  {
+   "fieldname": "cpu_cores",
+   "fieldtype": "Int",
+   "label": "CPU Cores",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "ram_gb",
+   "fieldtype": "Float",
+   "label": "RAM GB"
+  },
+  {
+   "fieldname": "disk_capacity_gb",
+   "fieldtype": "Float",
+   "label": "Disk Capacity GB"
+  },
+  {
+   "default": "22",
+   "fieldname": "ssh_port",
+   "fieldtype": "Int",
+   "label": "SSH port"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Online\nOffline\nMaintenance\nDecommissioned"
+  },
+  {
+   "fieldname": "enviorment",
+   "fieldtype": "Select",
+   "label": "Environment",
+   "options": "Development\nStaging\nProduction"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-21 17:14:46.839925",
+ "modified_by": "Administrator",
+ "module": "Server Management",
+ "name": "Server",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
