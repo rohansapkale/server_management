@@ -14,7 +14,7 @@ class Server(Document):
 		try:
 			port = int(self.ssh_port)
 		except (ValueError,TypeError):
-			frappe.throw("SSH Port Must be a valid number")
+			frappe.throw("SSH Port Must be a valid number")#
 		if port <1 or port > 65535:
 			frappe.throw("Enter a valid port number")
 	def validate(self):
