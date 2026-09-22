@@ -1,32 +1,25 @@
-# Copyright (c) 2026, Rohan Sapkale and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
-class Website_(Document):
-	_DOCTYPE_NAME = "Website_"
-   import frappe
-   form frappe.model.document import Document
+class Website(Document):
 
-class website(document):
-	def validate(self):
+    def validate(self):
         self.validate_server()
-		self.validate_production()
+        self.validate_production()
         self.validate_status_transition()
 
-	 def validate_server(self):
-         if not self.server:
-            return	
-        
-		 server_status = frappe.db.get_value(
+    def validate_server(self):
+        if not self.server:
+            return
+
+        server_status = frappe.db.get_value(
             "Server",
             self.server,
             "status"
-		 )
-		 if(
-			 if (
+        )
+
+        if (
             self.status == "Active"
             and server_status == "Decommissioned"
         ):
@@ -34,7 +27,8 @@ class website(document):
                 f"Active Website cannot be linked to "
                 f"Decommissioned Server: {self.server}"
             )
-	 def validate_production(self):
+#  fdd
+    def validate_production(self):
         if self.environment == "Production":
 
             if not self.domain:
@@ -47,7 +41,8 @@ class website(document):
                     "SSL is recommended for Production websites.",
                     alert=True
                 )
-	 def validate_status_transition(self):
+
+    def validate_status_transition(self):
         if self.is_new():
             return
 
@@ -68,15 +63,11 @@ class website(document):
                 {
                     "website": self.name,
                     "status": "Active"
-                }	
-			)
+                }
+            )
 
             if active_deployment:
                 frappe.throw(
                     f"Cannot change Website status to "
                     f"{self.status} while an active deployment exists."
-                )			
-
-
-	
-
+                )
