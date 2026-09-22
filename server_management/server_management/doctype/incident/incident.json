@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-09-22 12:46:58.494031",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "server",
+  "website",
+  "service",
+  "reported_by",
+  "assigned_to",
+  "priority",
+  "category",
+  "description",
+  "status",
+  "started_at",
+  "resolved_at",
+  "resolution",
+  "root_cause"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Server Service"
+  },
+  {
+   "fieldname": "reported_by",
+   "fieldtype": "Link",
+   "label": "Reported By",
+   "options": "User"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned to ",
+   "options": "User"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nHigh\nMedium\nCritical"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "ServerDown\nHighLoad\nDeployment Failure\nService Failure\nSSL Expired\nBackup Failure\nOther"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nAssigned\nInvestigating\nMonitoring\nResolved\nClose"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At"
+  },
+  {
+   "fieldname": "resolved_at",
+   "fieldtype": "Datetime",
+   "label": "Resolved At"
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Long Text",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Small Text",
+   "label": "Root Cause"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-22 12:56:23.315757",
+ "modified_by": "Administrator",
+ "module": "Server Management",
+ "name": "Incident",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
