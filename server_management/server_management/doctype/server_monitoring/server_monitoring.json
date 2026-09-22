@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-22 13:10:23.005977",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "server",
+  "timestamp",
+  "cpu_usage",
+  "ram_usage",
+  "disk_usage",
+  "network_in_mb",
+  "status",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Server",
+   "options": "Server",
+   "reqd": 1
+  },
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "label": "Timestamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cpu_usage",
+   "fieldtype": "Percent",
+   "label": "Cpu Usage ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ram_usage",
+   "fieldtype": "Percent",
+   "label": "Ram Usage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "disk_usage",
+   "fieldtype": "Percent",
+   "label": "Disk Usage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "network_in_mb",
+   "fieldtype": "Float",
+   "label": "Network In Mb",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Normal\nWarning\nCritical",
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-22 13:23:41.005923",
+ "modified_by": "Administrator",
+ "module": "Server Management",
+ "name": "Server Monitoring",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
