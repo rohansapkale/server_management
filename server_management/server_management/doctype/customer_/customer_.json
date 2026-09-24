@@ -70,8 +70,13 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-09-24 13:09:51.145016",
+ "links": [
+  {
+   "link_doctype": "Website_",
+   "link_fieldname": "customer"
+  }
+ ],
+ "modified": "2026-09-24 16:57:25.540761",
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Customer_",
@@ -95,5 +100,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "customer_name"
 }

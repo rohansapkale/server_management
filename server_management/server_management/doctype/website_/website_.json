@@ -75,7 +75,7 @@
    "fieldname": "repository_type",
    "fieldtype": "Select",
    "label": "Repository Type",
-   "options": "GitHub,GitLab,Bitbucket,Custom",
+   "options": "GitHub\nGitLab\nBitbucket\nCustom",
    "reqd": 1
   },
   {

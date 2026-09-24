@@ -37,8 +37,9 @@
   },
   {
    "fieldname": "website",
-   "fieldtype": "Data",
-   "label": "Website"
+   "fieldtype": "Link",
+   "label": "Website",
+   "options": "Website_"
   },
   {
    "fieldname": "service",
@@ -105,7 +106,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-22 12:56:23.315757",
+ "modified": "2026-09-24 16:33:29.542944",
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Incident",
