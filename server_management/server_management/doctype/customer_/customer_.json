@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:customer_name",
  "creation": "2026-09-21 17:48:18.792857",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -19,7 +20,10 @@
   {
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "Customer name"
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "company",
@@ -38,8 +42,9 @@
   },
   {
    "fieldname": "hosting_plan",
-   "fieldtype": "Data",
-   "label": "Hosting Plan"
+   "fieldtype": "Link",
+   "label": "Hosting Plan",
+   "options": "Hosting Plan"
   },
   {
    "fieldname": "status",
@@ -66,10 +71,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-21 17:51:14.631629",
+ "modified": "2026-09-24 13:09:51.145016",
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Customer_",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

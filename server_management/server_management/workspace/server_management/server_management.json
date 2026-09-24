@@ -1,8 +1,8 @@
 {
  "app": "server_management",
  "charts": [],
- "content": "[{\"id\":\"sm_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Server & Website Management</b></span>\",\"col\":12}},{\"id\":\"sc_servers\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Servers\",\"col\":4}},{\"id\":\"sc_websites\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Websites\",\"col\":4}},{\"id\":\"sc_domains\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Domains\",\"col\":4}}]",
- "creation": "2026-09-21 11:30:00.000000",
+ "content": "[{\"id\":\"sm_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Server &amp; Website Management</b></span>\",\"col\":12}},{\"id\":\"sc_servers\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Servers\",\"col\":4}},{\"id\":\"sc_domains\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Domains\",\"col\":4}}]",
+ "creation": "2026-09-21 11:30:00",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -12,48 +12,8 @@
  "idx": 1,
  "is_hidden": 0,
  "label": "Server Management",
- "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Infrastructure",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Server",
-   "link_count": 0,
-   "link_to": "Server",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Website",
-   "link_count": 0,
-   "link_to": "Website",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Domain",
-   "link_count": 0,
-   "link_to": "Domain",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  }
- ],
- "modified": "2026-09-21 11:30:00.000000",
+ "links": [],
+ "modified": "2026-09-24 11:24:55.815552",
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Server Management",
@@ -69,24 +29,16 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "Domains",
+   "link_to": "Domain_",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Servers",
    "link_to": "Server",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Websites",
-   "link_to": "Website",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Domains",
-   "link_to": "Domain",
    "stats_filter": "[]",
    "type": "DocType"
   }

@@ -1,12 +1,3 @@
-# Copyright (c) 2026, Rohan Sapkale and contributors
-# For license information, please see license.txt
-
-# import frappe
-from frappe.model.document import Document
-
-
-class SSLCertificate(Document):
-	_DOCTYPE_NAME = "SSL Certificate"
 import frappe
 from frappe.model.document import Document
 from frappe.utils import date_diff, getdate, today

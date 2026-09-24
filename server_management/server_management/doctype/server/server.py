@@ -48,11 +48,12 @@ class Server(Document):
 			)
 
 	def prevent_production_server_deletion(self):
-		if self.environment != "Production":
+		env = getattr(self, "enviorment", getattr(self, "environment", None))
+		if env != "Production":
 			return
 
 		active_websites = frappe.get_all(
-			"Website",
+			"Website_",
 			filters={
 				"server": self.name,
 				"status": ["in", ["Active", "Maintenance"]]
