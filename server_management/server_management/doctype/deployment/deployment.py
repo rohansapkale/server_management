@@ -1,8 +1,6 @@
-# Copyright (c) 2026, Rohan Sapkale and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
+from frappe.utils import now_datetime, time_diff_in_seconds
 
 
 class Deployment(Document):

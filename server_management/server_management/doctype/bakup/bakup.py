@@ -1,18 +1,9 @@
-# Copyright (c) 2026, Rohan Sapkale and contributors
-# For license information, please see license.txt
-
-# import frappe
-from frappe.model.document import Document
-
-
-class Bakup(Document):
-	_DOCTYPE_NAME = "Bakup"
 import frappe
 from frappe.model.document import Document
 from frappe.utils import add_days, getdate
 
 
-class Backup(Document):
+class Bakup(Document):
 
     def validate(self):
         self.validate_target()
@@ -47,7 +38,7 @@ class Backup(Document):
         if frappe.db.exists("DocType", "Incident"):
             incident = frappe.get_doc({
                 "doctype": "Incident",
-                "subject": f"Backup Failed - {self.name}",
+                "title": f"Backup Failed - {self.name}",
                 "description": (
                     f"Backup: {self.name}\n"
                     f"Server: {self.server or 'N/A'}\n"

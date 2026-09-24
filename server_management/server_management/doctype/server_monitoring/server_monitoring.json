@@ -2,6 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "MON-.YYYY.-.#####",
  "creation": "2026-09-22 13:10:23.005977",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -75,6 +76,7 @@
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Server Monitoring",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -94,5 +96,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "server"
 }

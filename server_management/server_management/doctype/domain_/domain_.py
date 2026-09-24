@@ -1,12 +1,15 @@
-# Copyright (c) 2026, Rohan Sapkale and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
+from frappe.utils import date_diff, getdate, today
 
 
 class Domain_(Document):
-	
+
+	def validate(self):
+		self.validate_dates()
+		self.calculate_days_remaining()
+		self.update_status()
+
 	def validate_dates(self):
 		if not self.registration_date or not self.expiry_date:
 			return

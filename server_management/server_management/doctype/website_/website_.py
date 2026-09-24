@@ -2,7 +2,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class Website(Document):
+class Website_(Document):
 
     def validate(self):
         self.validate_server()

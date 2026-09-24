@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{server}-{service_name}",
  "creation": "2026-09-21 17:51:49.639941",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -27,7 +28,9 @@
   {
    "fieldname": "service_name",
    "fieldtype": "Data",
-   "label": "Service Name"
+   "in_list_view": 1,
+   "label": "Service Name",
+   "reqd": 1
   },
   {
    "fieldname": "service_type",
@@ -71,10 +74,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-21 17:58:40.005928",
+ "modified": "2026-09-24 13:09:29.133436",
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Server Service",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
