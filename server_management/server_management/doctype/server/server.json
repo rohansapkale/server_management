@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:server_name",
  "creation": "2026-09-21 17:02:23.634552",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -112,10 +113,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-21 17:14:46.839925",
+ "modified": "2026-09-24 12:54:11.787518",
  "modified_by": "Administrator",
  "module": "Server Management",
  "name": "Server",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
