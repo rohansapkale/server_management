@@ -16,9 +16,9 @@ class Domain_(Document):
 		registration_date = getdate(self.registration_date)
 		expiry_date = getdate(self.expiry_date)
 
-		if expiry_date < registration_date:
+		if expiry_date <= registration_date:
 			frappe.throw(
-				"expiry date must be strictly greater than Registration Date."
+				"Expiry date must be strictly greater than Registration Date."
 			)
 	def calculate_days_remaining(self):
 		if not self.expiry_date:

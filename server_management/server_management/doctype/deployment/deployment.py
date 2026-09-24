@@ -19,12 +19,12 @@ class Deployment(Document):
 			self.server,
 			"status"
 		)
-		blocked_statuses = ['Offilne',"Maintenace","Decomissioned"]
+		blocked_statuses = ["Offline", "Maintenance", "Decommissioned"]
 
 		if server_status in blocked_statuses:
 			frappe.throw(
-				f"Deployement cannot proceed beacuse server"
-				f"<b>{self.server} is </b>{server_status}."
+				f"Deployment cannot proceed because server "
+				f"<b>{self.server}</b> is {server_status}."
 			)
 
 	def validate_website(self):
@@ -35,25 +35,30 @@ class Deployment(Document):
 			self.website,
 			"status"
 		)
-		blocked_statuses = ["Suspended","Archive","Inactive"]
+		blocked_statuses = ["Suspended", "Archived", "Archive", "Inactive"]
 
 		if website_status in blocked_statuses:
 			frappe.throw(
-				f"Deployemnt cannot proceed because server"
-				f"<b>{self.website} is </b>{server_status}"
+				f"Deployment cannot proceed because website "
+				f"<b>{self.website}</b> is {website_status}."
 			)
+
 	def validate_production_approval(self):
 		if not self.website:
 			return
 		environment = frappe.db.get_value(
-			"website_",
+			"Website_",
+			self.website,
+			"envirnoment"
+		) or frappe.db.get_value(
+			"Website_",
 			self.website,
 			"environment"
 		)
 		if environment == "Production":
 			if self.status == "Running" and not self.approved_by:
 				frappe.throw(
-					"Production deployment requires approval"
+					"Production deployment requires approval "
 					"before it can be moved to Running."
 				)
 	def calculate_duration(self):
@@ -97,9 +102,9 @@ class Deployment(Document):
 			"title": f"Deployment Failed: {self.name}",
 			"server": self.server,
 			"website": self.website,
-			"reported_by": frappe.session.user,
+			"reported_by": frappe.session.user or "Administrator",
 			"priority": "High",
-			"category": "Deployment",
+			"category": "Deployment Failure",
 			"description": (
 				f"Deployment <b>{self.name}</b> failed.<br><br>"
 				f"<b>Commit:</b> {self.commit_id or 'N/A'}<br>"

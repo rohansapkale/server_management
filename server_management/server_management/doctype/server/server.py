@@ -32,10 +32,16 @@ class Server(Document):
 			)
 
 	def validate_ssh_port(self):
-		if not self.ssh_port:
+		if self.ssh_port is None or self.ssh_port == "":
 			return
 
-		if not 1 <= int(self.ssh_port) <= 65535:
+		try:
+			port = int(self.ssh_port)
+			if not (1 <= port <= 65535):
+				frappe.throw(
+					"SSH Port must be between 1 and 65535."
+				)
+		except (ValueError, TypeError):
 			frappe.throw(
 				"SSH Port must be between 1 and 65535."
 			)
@@ -87,7 +93,7 @@ class Server(Document):
 			{
 				"server": self.name,
 				"status": ["in", ["Open", "Assigned", "Investigating", "Monitoring"]],
-				"category": "Server"
+				"category": "ServerDown"
 			}
 		)
 
@@ -98,9 +104,10 @@ class Server(Document):
 			"doctype": "Incident",
 			"title": f"Server Offline: {self.name}",
 			"server": self.name,
-			"reported_by": frappe.session.user,
+			"reported_by": frappe.session.user or "Administrator",
+			"assigned_to": frappe.session.user if frappe.session.user and frappe.session.user != "Guest" else "Administrator",
 			"priority": "Critical",
-			"category": "Server",
+			"category": "ServerDown",
 			"description": (
 				f"Server <b>{self.name}</b> has transitioned "
 				"to Offline status."

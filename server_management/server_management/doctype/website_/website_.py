@@ -11,7 +11,7 @@ class Website_(Document):
 
     def validate_server(self):
         if not self.server:
-            return
+            frappe.throw("Website must be bound to a Server.")
 
         server_status = frappe.db.get_value(
             "Server",
@@ -27,10 +27,10 @@ class Website_(Document):
                 f"Active Website cannot be linked to "
                 f"Decommissioned Server: {self.server}"
             )
-#  fdd
-    def validate_production(self):
-        if self.environment == "Production":
 
+    def validate_production(self):
+        env = self.get("envirnoment") or self.get("environment")
+        if env == "Production":
             if not self.domain:
                 frappe.throw(
                     "Production website must have a Domain."
@@ -57,12 +57,11 @@ class Website_(Document):
         ]
 
         if self.status in restricted_statuses:
-
             active_deployment = frappe.db.exists(
                 "Deployment",
                 {
                     "website": self.name,
-                    "status": "Active"
+                    "status": ["in", ["Active", "Running"]]
                 }
             )
 

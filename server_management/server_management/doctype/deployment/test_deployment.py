@@ -1,22 +1,12 @@
 # Copyright (c) 2026, Rohan Sapkale and Contributors
 # See license.txt
 
-# import frappe
-from frappe.tests import IntegrationTestCase
+from server_management.tests.test_deployment import TestDeployment
 
 
-# On IntegrationTestCase, the doctype test records and all
-# link-field test record dependencies are recursively loaded
-# Use these module variables to add/remove to/from that list
-EXTRA_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
-IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
-
-
-
-class IntegrationTestDeployment(IntegrationTestCase):
+class IntegrationTestDeployment(TestDeployment):
 	"""
 	Integration tests for Deployment.
-	Use this class for testing interactions between multiple components.
+	Inherits test suite from server_management.tests.test_deployment.
 	"""
-
 	pass
